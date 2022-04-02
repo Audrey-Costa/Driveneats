@@ -1,0 +1,133 @@
+body{
+    font-family: 'Righteous', cursive;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    font-weight: 400;
+    font-size: 44px;
+    color: #fff;
+    font-family: 'Righteous';
+}
+
+h2{
+    font-size: 18px;
+    font: 400;
+    color: #fff;
+    font-family: 'Roboto';
+}
+
+.option{
+    color: #333;
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 16px;
+}
+
+.container{
+    width: 412px;
+    display: flex;
+    flex-direction: column;
+}
+
+.description{
+    font: 300;
+    color: #A6A6A6;
+    margin: 6px 0;
+}
+
+.top{
+    width: 412px;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #CF2B2B;
+    padding: 16px;
+    box-sizing: border-box;
+    box-shadow: 0 0 6px 0 black;
+}
+
+.contents{
+    margin: 90px 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #E5E5E5;
+}
+
+.contents > p{
+    margin: 20px 0 7px 16px;
+    font: 400;
+    font-family: 'Righteous';
+    font-size: 26px;
+}
+
+.scroll{
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.scrol::-webkit-scrollbar{
+    display: none;
+}
+
+.options{
+    width: 144px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    padding: 16px;
+    margin: 16px 8px;
+    border-radius: 8px;
+}
+
+.options img{
+    width: 144px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price .material-icons{
+    color: green;
+}
+
+.price .hide{
+    display: none;
+}
+
+.finalrequest{
+    background-color: #fff;
+    width: 412px;
+    height: 90px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    display: flex;
+    flex-wrap: wrap;
+    background: #CBCBCB;
+    width: 364px;
+    height: 60px;
+    border-radius: 50px;
+    border: none;
+    font-size: 20px;
+    font-family: 'Roboto';
+    color: #fff;
+}
