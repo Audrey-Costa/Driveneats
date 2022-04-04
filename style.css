@@ -251,8 +251,6 @@ h2{
 }
 
 button{
-    display: flex;
-    flex-wrap: wrap;
     background: #CBCBCB;
     width: 364px;
     height: 60px;

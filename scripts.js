@@ -7,6 +7,7 @@ let dessert;
 let priceLunch;
 let priceDrink;
 let priceDessert;
+let total;
 
 let optionlunch;
 let optionDrink;
@@ -33,9 +34,10 @@ function selectLunch(item){
     priceLunch = item.querySelector(".price > p").innerText;
 
     if (optionlunch && optionDrink && optionDessert){
-        document.querySelector(".end").classList.add("buttonColor")
-
-    }
+        let buttonRequest = document.querySelector(".end");
+        buttonRequest.classList.add("buttonColor");
+        buttonRequest.innerHTML = "Fechar pedido";
+    }   
 }
 
 function selectDrink(item){
@@ -52,7 +54,9 @@ function selectDrink(item){
     priceDrink = item.querySelector(".price > p").innerText;
 
     if (optionlunch && optionDrink && optionDessert){
-        document.querySelector(".end").classList.add("buttonColor")
+        let buttonRequest = document.querySelector(".end");
+        buttonRequest.classList.add("buttonColor");
+        buttonRequest.innerHTML = "Fechar pedido";
     }
 }
 
@@ -70,7 +74,9 @@ function selectDessert(item){
     priceDessert = item.querySelector(".price > p").innerText;
 
     if (optionlunch && optionDrink && optionDessert){
-        document.querySelector(".end").classList.add("buttonColor")
+        let buttonRequest = document.querySelector(".end");
+        buttonRequest.classList.add("buttonColor");
+        buttonRequest.innerHTML = "Fechar pedido";
     }
 }
 
@@ -79,7 +85,7 @@ function closeRequest(){
         let valorLunch = Number(priceLunch.split(",")[0].split(" ")[1] + "." + priceLunch.split(",")[1]).toFixed(2);
         let valorDrink = Number(priceDrink.split(",")[0].split(" ")[1] + "." + priceDrink.split(",")[1]).toFixed(2);
         let valorDessert = Number(priceDessert.split(",")[0].split(" ")[1] + "." + priceDessert.split(",")[1]).toFixed(2);
-        let total = (Number(valorLunch) + Number(valorDrink) + Number(valorDessert)).toFixed(2);
+        total = (Number(valorLunch) + Number(valorDrink) + Number(valorDessert)).toFixed(2);
         total = total.split(".");
 
         newWindow.innerHTML = `<div class="background">
@@ -89,10 +95,25 @@ function closeRequest(){
         <div class="request"><div class="optionName"><p>${drink}</p></div><div class="optionPrice"><p>${priceDrink}</p></div></div>
         <div class="request"><div class="optionName"><p>${dessert}</p></div><div class="optionPrice"><p>${priceDessert}</p></div></div>
         <div class="request"><div class="total"><p>TOTAL</p></div><div class="optionPrice total"><p>R$ ${total}</p></div></div>
-        <button class="endRequest">Tudo Certo, pode pedir!</button>
+        <button onclick="sendRequest()" class="endRequest">Tudo Certo, pode pedir!</button>
         <button onclick="closeWindow()" class="cancel">Cancelar</button>
     </div>
 </div>
 ${newWindow.innerHTML}`;
     }
+}
+
+function sendRequest(){
+    let name = prompt("Digite seu nome:");
+    let address = prompt("Digite seu endereço");
+    let message = encodeURIComponent(`Olá, gostaria de fazer o pedido:
+    - Prato: ${lunch}
+    - Bebida: ${drink}
+    - Sobremesa: ${dessert}
+    Total: R$ ${total}
+    
+    Nome: ${name}
+    Endereço: ${address}`);
+    window.open(`https://wa.me/5521983031355?text=${message}`);
+
 }
