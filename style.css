@@ -75,6 +75,7 @@ h2{
 
 .options{
     width: 144px;
+    height: 270px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -112,8 +113,17 @@ h2{
     align-items: center;
 }
 
-.price .material-icons{
+.price > p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.icon{
     color: green;
+    display: none;
 }
 
 .background{
@@ -136,10 +146,11 @@ h2{
     align-items: center;
     position: fixed;
     top: 150px;
-    width: 378px;
+    width: 90%;
     height: 354px;
     background-color: #50D074;
     border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
 }
 
 .title{
@@ -156,7 +167,7 @@ h2{
 
 .request {
     color: #fff;
-    width: 300px;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     font-family: 'Roboto';
@@ -168,7 +179,26 @@ h2{
     margin-bottom: 13px;
 }
 
+.optionName{
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.optionPrice{
+    width: 100px;
+    text-align: left;
+}
+
+.total{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+}
+
 .endRequest{
+    width: 80%;
     background-color: #fff;
     color: #50D074;
     margin-top: 11px;
@@ -185,6 +215,7 @@ h2{
 }
 
 .cancel{
+    width: 80%;
     background-color: #50D074;
     color: #fff;
     font-family: 'Roboto';
@@ -199,8 +230,12 @@ h2{
     align-items: center;
 }
 
-.price .hide{
+.price > span{
     display: none;
+}
+
+.show{
+    display: initial;
 }
 
 .finalRequest{
